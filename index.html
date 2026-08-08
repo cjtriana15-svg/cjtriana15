@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Triangle Solver | Carlos José Triana Merodio</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="header">
+            <div class="project-badge">FINAL PROJECT</div>
+
+            <h1>📐 Triangle Solver</h1>
+
+            <p class="description">
+                Solve triangles using the Law of Sines and Law of Cosines.
+            </p>
+        </header>
+
+
+        <!-- Project Information -->
+
+        <section class="project-info">
+
+            <h2>About This Project</h2>
+
+            <p>
+                This program is designed to solve triangles when three or more
+                consistent values are provided. It uses mathematical methods
+                including the Law of Sines and the Law of Cosines to determine
+                unknown sides and angles.
+            </p>
+
+            <div class="methods">
+
+                <div class="method">
+                    <strong>Law of Sines</strong>
+                    <span>Used to determine missing sides and angles.</span>
+                </div>
+
+                <div class="method">
+                    <strong>Law of Cosines</strong>
+                    <span>Used to solve triangles from side and angle information.</span>
+                </div>
+
+                <div class="method">
+                    <strong>Classification</strong>
+                    <span>Identifies the triangle by its sides and angles.</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Instructions -->
+
+        <div class="info">
+
+            <strong>How to use:</strong>
+
+            Enter at least three known values.
+            Unknown values can be left blank.
+            Angles must be entered in degrees.
+
+        </div>
+
+
+        <!-- Inputs -->
+
+        <h2>Enter the Known Values</h2>
+
+        <div class="inputs">
+
+            <div class="input-section">
+
+                <h3>Sides</h3>
+
+                <label for="sideA">Side a</label>
+                <input
+                    type="number"
+                    id="sideA"
+                    min="0"
+                    step="any"
+                    placeholder="Unknown"
+                >
+
+                <label for="sideB">Side b</label>
+                <input
+                    type="number"
+                    id="sideB"
+                    min="0"
+                    step="any"
+                    placeholder="Unknown"
+                >
+
+                <label for="sideC">Side c</label>
+                <input
+                    type="number"
+                    id="sideC"
+                    min="0"
+                    step="any"
+                    placeholder="Unknown"
+                >
+
+            </div>
+
+
+            <div class="input-section">
+
+                <h3>Angles</h3>
+
+                <label for="angleA">
+                    Angle A (opposite side a)
+                </label>
+
+                <input
+                    type="number"
+                    id="angleA"
+                    min="0"
+                    max="179.999"
+                    step="any"
+                    placeholder="Unknown"
+                >
+
+
+                <label for="angleB">
+                    Angle B (opposite side b)
+                </label>
+
+                <input
+                    type="number"
+                    id="angleB"
+                    min="0"
+                    max="179.999"
+                    step="any"
+                    placeholder="Unknown"
+                >
+
+
+                <label for="angleC">
+                    Angle C (opposite side c)
+                </label>
+
+                <input
+                    type="number"
+                    id="angleC"
+                    min="0"
+                    max="179.999"
+                    step="any"
+                    placeholder="Unknown"
+                >
+
+            </div>
+
+        </div>
+
+
+        <button onclick="solveTriangle()">
+            🔢 Solve Triangle
+        </button>
+
+
+        <div id="message"></div>
+
+
+        <!-- Results -->
+
+        <div id="results" class="hidden">
+
+            <h2>Triangle Solution</h2>
+
+            <div class="results-grid">
+
+                <div class="result-box">
+
+                    <h3>Sides</h3>
+
+                    <p>
+                        Side a:
+                        <strong id="resultA"></strong>
+                    </p>
+
+                    <p>
+                        Side b:
+                        <strong id="resultB"></strong>
+                    </p>
+
+                    <p>
+                        Side c:
+                        <strong id="resultC"></strong>
+                    </p>
+
+                </div>
+
+
+                <div class="result-box">
+
+                    <h3>Angles</h3>
+
+                    <p>
+                        Angle A:
+                        <strong id="resultAngleA"></strong>
+                    </p>
+
+                    <p>
+                        Angle B:
+                        <strong id="resultAngleB"></strong>
+                    </p>
+
+                    <p>
+                        Angle C:
+                        <strong id="resultAngleC"></strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="classification">
+
+                <h2>Triangle Classification</h2>
+
+                <p id="triangleType"></p>
+
+            </div>
+
+
+            <h2>Triangle Diagram</h2>
+
+            <canvas
+                id="triangleCanvas"
+                width="600"
+                height="450">
+            </canvas>
+
+        </div>
+
+
+        <!-- Footer -->
+
+        <footer class="footer">
+
+            <div class="footer-line"></div>
+
+            <p class="created-by">
+                Created by
+                <strong>Carlos José Triana Merodio</strong>
+            </p>
+
+            <p class="footer-project">
+                Triangle Solver • Final Project
+            </p>
+
+            <p class="footer-year">
+                © 2026 Carlos José Triana Merodio
+            </p>
+
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
